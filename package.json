@@ -1,0 +1,16 @@
+{
+  "name": "driftrock",
+  "version": "1.0.0",
+  "description": "driftrock-test",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Charlie Furniss",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
