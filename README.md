@@ -40,21 +40,26 @@ I would also like to improve error handling and write tests for each of the five
 Further results of average_spend and total_spend tests:
 
   labadie_carissa@kub.co
+    
     * Average spend: 49.95
     * Total spend: 199.8
 
   alyson_wehner@roob.org
+    
     * Average spend: 49.70
     * Total spend: 447.31
 
   ross.yost@howe.biz
+    
     * Average spend: 40.57
     * Total spend: 243.4
 
   joaquin.barrows@konopelskikuhic.io
+    
     * Average spend: 47.75
     * Total spend: 143.26
 
   schroeder_noah@kochkoelpin.com
+    
     * Average spend: 49.79
     * Total spend: 248.96
