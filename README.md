@@ -29,12 +29,12 @@ With per_page set at 100000 in both the getPurchases call in services/purchases.
       * Total user spend: 993.32
 
 ## Next steps
-As well as completing the remaining two commands (most_loyal and most_sold), I would like to refactor by creating more generic functions in the utilities file including:
+As well as completing the remaining two commands (most_loyal and most_sold), I will refactor by creating more generic functions in the utilities file including:
 
   * A filter function into utilities that can be used in the users and purchases services
   * A getData function that would make a basic api call and return all data
 
-I would also like to improve error handling and write tests for each of the five basic commands.
+I will also improve error handling and write tests for each of the five basic commands.
 
 ## Notes
 Further results of average_spend and total_spend tests:
