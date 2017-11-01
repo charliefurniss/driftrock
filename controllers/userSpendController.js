@@ -3,23 +3,38 @@ const purchaseService = require('../services/purchases');
 const utilities = require('../utilities/utilities');
 
 /**
- * Gets total and average user spend based on spendType
+ * Finds user and returns function to calculate 
+ * user spend with the user_id
  * @param {string} email 
  * @param {string} spendType 
  */
 const getUserSpend = (email, spendType) => {  
   userService.getUserByEmail(email)
     .then((user) => {
-      return purchaseService.getPurchasesByUserId(user.id)
-        .then(userPurchases => {
-          const label = setSpendLabel(spendType);
-          const value = setSpendValue(userPurchases, spendType);
-
-          return displayUserSpend(label, value);
-        })      
+      if (!user) {
+        return displayUserSpend('Sorry, we don’t have any data for that user');
+      }
+      return calculateUserSpend(user.id, spendType);      
     })
     .catch((err) => {
       console.log(err);
+    })
+}
+
+/**
+ * Finds all a user's purchases and returns a function to 
+ * display either the average or the total spend, basic on the 
+ * value of spendType
+ * @param {string} user_id 
+ * @param {string} spendType 
+ */
+const calculateUserSpend = (user_id, spendType) => {
+  return purchaseService.getPurchasesByUserId(user_id)
+    .then(userPurchases => {
+      const label = setSpendLabel(spendType);
+      const value = setSpendValue(userPurchases, spendType);
+
+      return displayUserSpend(label, value);
     })
 }
 

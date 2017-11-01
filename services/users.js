@@ -9,6 +9,11 @@ const getUserByEmail = (email) => {
 	return getUsers()
 		.then((users) => {
 			const selectedUser = filterUsersByEmail(users, email);
+
+			if (!selectedUser) {
+				return {};
+			}
+
 			return selectedUser[0];
 		})
 }
@@ -22,6 +27,7 @@ const getUserById = (user_id) => {
 	return getUsers()
 		.then((users) => {
 			const selectedUser = filterUsersById(users, user_id);
+
 			return selectedUser[0];
 		})
 }

@@ -4,7 +4,13 @@
  * @param {string} value 
  */
 const displayResult = (label, value) => {
-  console.log(`${label} ${value}`);  
+  let display = label; 
+  
+  if (value) {
+    display = `${label} ${value}`;
+  }
+  
+  console.log(display);  
 }
 
 /**
