@@ -1,7 +1,7 @@
 # Driftrock exercise
 
 ## Description
-Node.js command-line app querying and displaying data.
+Node.js command-line app querying and displaying data. It makes use of three npm modules: commander, request and request-promise-native.
 
 ## Instructions
 To use the app, run 'npm install' from inside the root directory, then use one of the following commands:
