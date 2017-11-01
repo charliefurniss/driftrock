@@ -1,7 +1,7 @@
 {
   "name": "driftrock",
   "version": "1.0.0",
-  "description": "driftrock-test",
+  "description": "driftrock",
   "main": "index.js",
   "scripts": {
     "test": "test"
