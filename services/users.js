@@ -26,6 +26,9 @@ const getUserByEmail = (email) => {
 const getUserById = (user_id) => {
 	return getUsers()
 		.then((users) => {
+			if (!users) {
+        return displayUserSpend('Sorry, we don’t have any data for that user');
+      }
 			const selectedUser = filterUsersById(users, user_id);
 
 			return selectedUser[0];

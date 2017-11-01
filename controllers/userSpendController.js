@@ -15,10 +15,7 @@ const getUserSpend = (email, spendType) => {
         return displayUserSpend('Sorry, we don’t have any data for that user');
       }
       return calculateUserSpend(user.id, spendType);      
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+    });
 }
 
 /**
@@ -31,6 +28,9 @@ const getUserSpend = (email, spendType) => {
 const calculateUserSpend = (user_id, spendType) => {
   return purchaseService.getPurchasesByUserId(user_id)
     .then(userPurchases => {
+      if (!userPurchases) {
+        return utilities.displayError('Sorry, something went wrong, please try again');
+      }
       const label = setSpendLabel(spendType);
       const value = setSpendValue(userPurchases, spendType);
 

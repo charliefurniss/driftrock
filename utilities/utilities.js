@@ -14,6 +14,14 @@ const displayResult = (label, value) => {
 }
 
 /**
+ * Displays error message in the console
+ * @param {string} message 
+ */
+const displayError = (message) => {
+  console.log(message);
+}
+
+/**
  * Returns an array of floats
  * @param {array} purchases 
  */
@@ -35,6 +43,7 @@ const calculateTotalSpend = (spends) => {
 
 module.exports = {
   displayResult,
+  displayError,
   calculateTotalSpend,
   createSpends
 }

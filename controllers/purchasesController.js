@@ -9,6 +9,9 @@ const utilities = require('../utilities/utilities');
 const getHighestValue = () => {
 	return purchaseService.getPurchases()
 		.then(purchases => {
+      if (!purchases) {
+        return utilities.displayError('Sorry, something went wrong, please try again');
+      }
       return getHighestValueUser(purchases);
     })
 }
@@ -24,9 +27,12 @@ const getHighestValueUser = (purchases) => {
 
   return userService.getUserById(purchasesOfHighestValueUser.user_id)
     .then(user => {
+      if (!user) {
+        return utilities.displayError('Sorry, something went wrong, please try again');
+      }
       const userFullName = `${user.first_name} ${user.last_name}`;
           
-      displayHighestValueUserResults(userFullName, highestValueUserTotalSpend);
+      return displayHighestValueUserResults(userFullName, highestValueUserTotalSpend);
     });
 }
 
